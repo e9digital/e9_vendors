@@ -5,11 +5,14 @@
     %legend 
       = help_label(:widget_settings, :e9_vendors_widget_settings, :key => :e9_vendors_widget_help, :header => 'Variable Help')
     .field
-      = f.label :e9_vendors_widget_title, nil, :class => :req
+      = f.label :e9_vendors_widget_title
       = f.text_field :e9_vendors_widget_title
     .field
-      = f.label :e9_vendors_widget_form_title, nil, :class => :req
+      = f.label :e9_vendors_widget_form_title
       = f.text_field :e9_vendors_widget_form_title
+    .field
+      = f.label :e9_vendors_widget_form_text
+      = f.text_area :e9_vendors_widget_form_text
     - if e9_user?
       .field
         = f.label :e9_vendors_logo_size, nil, :class => :req
