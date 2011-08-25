@@ -1,0 +1,7 @@
+= form_for resource do |f|
+  .errors= resource_error_messages!
+  .field
+    = f.label :name, nil, :class => :req
+    = f.text_field :name
+  .actions
+    = f.submit

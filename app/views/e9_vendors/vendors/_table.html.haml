@@ -1,0 +1,20 @@
+%table.records
+  %thead
+    %tr
+      %th= resource_humanize(:name)
+      %th= resource_humanize(:vendor_category)
+      %th= e9_t(:actions)
+  %tbody
+  - if collection.empty?
+    %tr
+      %td{:colspan => 3}= e9_t(:no_records_text)
+  - else
+    - collection.each do |record|
+      %tr{:id => "ids_#{record.id}", :class => cycle('odd', 'even')}
+        %td.txt
+          = record.name
+        %td.txt
+          = record.vendor_categories.order(:name).map(&:name).join(", ").html_safe
+        %td.links
+          = link_to_edit_resource(record)
+          = link_to_destroy_resource(record)

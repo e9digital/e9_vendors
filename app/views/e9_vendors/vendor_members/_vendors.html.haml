@@ -1,0 +1,24 @@
+%table.records
+  %thead
+    %tr
+      %th= resource_humanize(:select)
+      %th= resource_humanize(:vendor)
+      %th= resource_humanize(:discount_code)
+      %th= resource_humanize(:discount_percentage)
+      %th= resource_humanize(:sales_contact)
+      %th= e9_t(:actions)
+  %tbody
+  - if collection.empty?
+    %tr
+      %td{:colspan => 3}= e9_t(:no_records_text)
+  - else
+    - collection.each do |record|
+      %tr{:id => "ids_#{record.id}", :class => cycle('odd', 'even')}
+        %td= check_box record, :display_on_widget
+        %td= record.vendor.name
+        %td= record.discount_code
+        %td= record.discount_percentage
+        %td= record.sales_contact
+        %td.links
+          = vendor_landing_page_link(record)
+          = edit_admin_resource_link(record)

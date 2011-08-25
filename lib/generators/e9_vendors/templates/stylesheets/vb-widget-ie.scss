@@ -1,0 +1,21 @@
+* html #vb-widget legend {
+  margin: 0px -8px 16px 0;
+  padding: 0; 
+}
+
+html > #vb-widget p code {
+  *white-space: normal; 
+}
+
+#vb-widget {
+  img {
+    -ms-interpolation-mode: bicubic; 
+  }
+  textarea {
+    overflow: auto; 
+  }
+  button {
+    position: relative;
+    top: 0.25em; 
+  } 
+}

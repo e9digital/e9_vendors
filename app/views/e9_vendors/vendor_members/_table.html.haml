@@ -1,0 +1,21 @@
+%table.records
+  %thead
+    %tr
+      %th= resource_humanize(:name)
+      %th= e9_t(:actions)
+  %tbody
+  - if collection.empty?
+    %tr
+      %td{:colspan => 2}= e9_t(:no_records_text)
+  - else
+    - collection.each do |record|
+      %tr{:id => "ids_#{record.id}", :class => cycle('odd', 'even')}
+        %td.txt.wide
+          = record.name
+        %td.links
+          = link_to e9_t(:manage), polymorphic_path([record, VendorProxy])
+          = link_to e9_t(:get_widget_code), polymorphic_path([:widget_code, record])
+          .tooltip
+            %pre #{record.widget_code}
+          = link_to_edit_resource(record)
+          = link_to_destroy_resource(record)

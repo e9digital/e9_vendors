@@ -1,0 +1,21 @@
+= form_tag polymorphic_path([:update_order, resource_class]) do
+  %table.records.sortable
+    %thead
+      %tr
+        %th= resource_humanize(:position)
+        %th= resource_humanize(:name)
+        %th= e9_t(:actions)
+    %tbody
+    - if collection.empty?
+      %tr
+        %td{:colspan => 3}= e9_t(:no_records_text)
+    - else
+      - collection.each do |record|
+        %tr{:id => "ids_#{record.id}", :class => cycle('odd', 'even')}
+          %td
+            .handle +++
+          %td.txt.wide
+            = record.name
+          %td.links
+            = link_to_edit_resource(record)
+            = link_to_destroy_resource(record)

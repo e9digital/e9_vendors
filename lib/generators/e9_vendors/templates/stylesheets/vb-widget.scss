@@ -1,0 +1,151 @@
+@import "compass/utilities/general/clearfix";
+
+#vb-widget {
+  $input_width:                           300px;
+  $textarea_width:                        390px;
+  $textarea_height:                       250px;
+  $feedback_border_color:               #dddddd;
+  $feedback_error_color:                #8a1f11;
+  $feedback_error_border_color:         #fbc2c3;
+  $feedback_error_background_color:     #fbe3e4;
+  $feedback_success_color:              #264409;
+  $feedback_success_border_color:       #c6d880;
+  $feedback_success_background_color:   #e6efc2;
+  $unfocused_border_color:              #bbbbbb;
+  $focus_border_color:                  #666666;
+  $fieldset_border_color:               #cccccc;
+
+  padding: 0.5em;
+  label {
+    display: block; 
+  }
+  fieldset, .vb-field {
+    margin: 0 0 1em 0; 
+  }
+  fieldset {
+    padding: 0.5em 0.75em 0.75em;
+    .vb-field {
+      margin: 0 0 0.25em 0; 
+    }
+    &.vb-checkbox {
+      input[type=checkbox] {
+        margin-right: 0.3em; 
+      }
+      label {
+        margin-right: 1.25em;
+        display: inline; 
+      } 
+    } 
+  }
+  input {
+    &[type=email], &[type=text], &[type=password] {
+      margin: 0 0 0.5em;
+      background-color: white;
+      padding: 5px; 
+    }
+    &.title {
+      font-size: 1.25em; 
+    }
+    &[type=checkbox], &[type=radio] {
+      position: relative;
+      top: 0.15em; 
+    } 
+  }
+  textarea {
+    margin: 0.5em 0;
+    padding: 5px; 
+  }
+  select {
+    margin: 0.5em 0; 
+  }
+  .vb-heading, .vb-subheading {
+    margin: 0.25em 0; 
+  }
+  .vb-vendor-category {
+    margin: 0 0 0.5em;
+    padding: 0.5em 0 0; 
+  }
+  .vb-vendor-category-name {
+    font-size: 1.1em;
+    margin: 0 0 0.25em 0; 
+  }
+  .vb-actions {
+    margin: 1em 0; 
+  }
+  .vb-vendor {
+    @include clearfix;
+    margin-bottom: 1em;
+    .vb-vendor-content {
+      float: none;
+      .vb-vendor-name {
+        font-size: 1.25em; 
+      } 
+    }
+    .vb-vendor-logo {
+      float: left;
+      margin-right: 0.5em; 
+    } 
+  }
+  .vb-show-desc-link {
+    white-space: nowrap; 
+  }
+  .vb-text {
+    padding: 0.25em 0; 
+  }
+  input {
+    &.text, &.title, &[type=email], &[type=text], &[type=password] {
+      width: $input_width; 
+    } 
+  }
+  textarea {
+    width: $textarea_width;
+    height: $textarea_height; 
+  }
+
+  fieldset {
+    border: 1px solid $fieldset_border_color; 
+  }
+
+  input.text, 
+  input.title, 
+  input[type=email], 
+  input[type=text], 
+  input[type=password],
+  textarea, 
+  select {
+    border: 1px solid $unfocused_border_color;
+    &:focus {
+      border: 1px solid $focus_border_color; 
+    }
+  }
+
+  .vb-feedback.vb-feedback-error,
+  .vb-field-error input[type=email],
+  .vb-field-error input[type=text],
+  .vb-field-error input[type=password] {
+    background-color: $feedback_error_background_color;
+    border-color: $feedback_error_border_color; 
+  }
+  .vb-feedback.vb-feedback-error, .vb-field-error {
+    color: $feedback_error_color;
+    a {
+      color: $feedback_error_color; 
+    } 
+  }
+  .vb-feedback {
+    padding: 0.5em 0.75em;
+    margin-bottom: 1em;
+    border: 1px solid $fieldset_border_color;
+    &.vb-feedback-success {
+      background-color: $feedback_success_background_color;
+      border-color: $feedback_success_border_color;
+      color: $feedback_success_color;
+      a {
+        color: $feedback_success_color; 
+      } 
+    }
+    .vb-feedback-error-field {
+      margin: 0.25em 0; 
+    } 
+  } 
+}

@@ -1,0 +1,7 @@
+<% if resource.errors.any? %>
+  $('form .errors').html("<%= escape_javascript(resource_error_messages!) %>");
+  $.fn.colorbox.resize();
+<% else %>
+  $('#ids_<%= resource.id %>').replaceWith("<%= escape_javascript(render('table_row', :record => resource)) %>");
+  $.fn.colorbox.close();
+<% end %>

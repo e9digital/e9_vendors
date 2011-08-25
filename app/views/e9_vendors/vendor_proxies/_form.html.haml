@@ -1,0 +1,28 @@
+= form_for resource, :url => vendor_member_vendor_proxy_path(resource.vendor_member, resource), :remote => request.xhr? do |f|
+  .errors= resource_error_messages!
+  .field
+    = f.label :discount_code, nil, :class => :req
+    = f.text_field :discount_code
+  .instructions
+    = e9_t(:vendor_defaults_instructions)
+  .field
+    = f.label :discount_percentage, resource.label_with_default(:discount_percentage)
+    = f.text_field :discount_percentage, :value => resource.send(:read_attribute, :discount_percentage)
+  .field
+    = f.label :landing_page, resource.label_with_default(:landing_page)
+    = f.text_area :landing_page, :value => (resource.send(:read_attribute, :landing_page) || '')
+  .field
+    = f.label :sales_full_name, resource.label_with_default(:sales_full_name)
+    = f.text_field :sales_full_name, :value => resource.send(:read_attribute, :sales_full_name)
+  .field
+    = f.label :sales_title, resource.label_with_default(:sales_title)
+    = f.text_field :sales_title, :value => resource.send(:read_attribute, :sales_title)
+  .field
+    = f.label :sales_phone, resource.label_with_default(:sales_phone)
+    = f.text_field :sales_phone, :value => resource.send(:read_attribute, :sales_phone)
+  .field
+    = f.label :sales_email, resource.label_with_default(:sales_email)
+    = f.text_field :sales_email, :value => resource.send(:read_attribute, :sales_email)
+
+  .actions
+    = f.submit

@@ -1,0 +1,11 @@
+%tr{:id => "ids_#{record.id}"}
+  %td
+    = form_for record, :url => vendor_member_vendor_proxy_path(record.vendor_member, record) do |f|
+      = f.check_box :display_on_widget, :class => 'vendor-proxy-widget-display'
+  %td= record.vendor_name
+  %td= record.discount_code
+  %td= record.discount_percentage
+  %td= record.sales_info_array.join('<br />').html_safe
+  %td.links
+    = link_to e9_t(:view_landing_page), record.landing_page_url, :rel => 'external', :class => 'landing-page'
+    = link_to e9_t(:edit), edit_vendor_member_vendor_proxy_path(record.vendor_member, record)

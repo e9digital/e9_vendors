@@ -1,0 +1,18 @@
+= form_for resource, :url => e9_vendors_settings_path  do |f|
+  .errors= resource_error_messages!
+
+  %fieldset#widget_settings
+    %legend 
+      = help_label(:widget_settings, :e9_vendors_widget_settings, :key => :e9_vendors_widget_help, :header => 'Variable Help')
+    .field
+      = f.label :e9_vendors_widget_title, nil, :class => :req
+      = f.text_field :e9_vendors_widget_title
+    .field
+      = f.label :e9_vendors_widget_form_title, nil, :class => :req
+      = f.text_field :e9_vendors_widget_form_title
+    - if e9_user?
+      .field
+        = f.label :e9_vendors_logo_size, nil, :class => :req
+        = f.text_field :e9_vendors_logo_size
+  .actions
+    = f.submit

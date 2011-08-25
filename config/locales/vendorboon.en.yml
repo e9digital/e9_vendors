@@ -1,0 +1,61 @@
+en:
+  activerecord:
+    # Translate model names. Used in Model.human_name().
+    models:
+      vendor_proxy: Vendor
+      vendor_category: Vendor Category
+      vendor_member: Member
+    
+    # Translate model attribute names. Used in Model.human_attribute_name(attribute).
+    attributes:
+      vendor:
+        vendor_category: Category
+        discount_percentage: Default Member Discount
+      settings:
+        e9_vendors_email_to: Email To
+        e9_vendors_email_from: Email From
+        e9_vendors_email_subject: Email Subject
+        e9_vendors_email_intro: Email Introduction
+        e9_vendors_widget_title: Widget Title
+        e9_vendors_widget_form_title: Widget Form Title
+        e9_vendors_widget_form_text: Form Introduction
+        e9_vendors_widget_settings: Widget Settings
+        e9_vendors_widget_help: |
+          <h3>Variables usable in short and long descriptions:</h3>
+          <ul>
+            <li>&#123;&#123;member_name&#125;&#125;</li>
+            <li>&#123;&#123;member_nickname&#125;&#125;</li>
+            <li>&#123;&#123;vendor_discount_code&#125;&#125;</li>
+            <li>&#123;&#123;vendor_discount_percentage&#125;&#125;</li>
+            <li>&#123;&#123;vendor_landing_page&#125;&#125;</li>
+            <li>&#123;&#123;vendor_name&#125;&#125;</li>
+            <li>&#123;&#123;vendor_nickname&#125;&#125;</li>
+            <li>&#123;&#123;vendor_sales_email&#125;&#125;</li>
+            <li>&#123;&#123;vendor_sales_full_name&#125;&#125;</li>
+            <li>&#123;&#123;vendor_sales_phone&#125;&#125;</li>
+            <li>&#123;&#123;vendor_sales_title&#125;&#125;</li>
+          </ul>
+
+  e9:
+    e9_vendors:
+      vendor_members:
+        manage: Manage Vendors
+        get_widget_code: Get Widget Code
+        widget_code_title: Widget Code
+      vendor_proxies:
+        edit: Edit Vendor Details
+        index_title: "Manage Vendors for %{member}"
+        view_landing_page: View Landing Page
+        vendor_defaults_instructions: Leave Fields Below Blank to Use Default Values
+        vendor_default: "(Default: %{default_value})"
+      vendors:
+        widget_settings_legend: Widget Settings
+      settings:
+        index_title: Vendors Settings
+        vendorboon_widget_settings_legend: Widget Settings
+        widget_interpolation_instructions: |
+          <h3>Variables usable in all fields:</h3>
+          <ul>
+            <li>&#123;&#123;member_name&#125;&#125;</li>
+            <li>&#123;&#123;member_nickname&#125;&#125;</li>
+          </ul>
