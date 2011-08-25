@@ -11,16 +11,7 @@ en:
       vendor:
         vendor_category: Category
         discount_percentage: Default Member Discount
-      settings:
-        e9_vendors_email_to: Email To
-        e9_vendors_email_from: Email From
-        e9_vendors_email_subject: Email Subject
-        e9_vendors_email_intro: Email Introduction
-        e9_vendors_widget_title: Widget Title
-        e9_vendors_widget_form_title: Widget Form Title
-        e9_vendors_widget_form_text: Form Introduction
-        e9_vendors_widget_settings: Widget Settings
-        e9_vendors_widget_help: |
+        interpolation_instructions: |
           <h3>Variables usable in short and long descriptions:</h3>
           <ul>
             <li>&#123;&#123;member_name&#125;&#125;</li>
@@ -35,7 +26,21 @@ en:
             <li>&#123;&#123;vendor_sales_phone&#125;&#125;</li>
             <li>&#123;&#123;vendor_sales_title&#125;&#125;</li>
           </ul>
-
+      settings:
+        e9_vendors_email_to: Email To
+        e9_vendors_email_from: Email From
+        e9_vendors_email_subject: Email Subject
+        e9_vendors_email_intro: Email Introduction
+        e9_vendors_widget_title: Widget Title
+        e9_vendors_widget_form_title: Widget Subtitle
+        e9_vendors_widget_form_text: Widget Description
+        e9_vendors_widget_settings: Widget Settings
+        e9_vendors_widget_help: |
+          <h3>Variables usable in all fields:</h3>
+          <ul>
+            <li>&#123;&#123;member_name&#125;&#125;</li>
+            <li>&#123;&#123;member_nickname&#125;&#125;</li>
+          </ul>
   e9:
     e9_vendors:
       vendor_members:
@@ -53,9 +58,3 @@ en:
       settings:
         index_title: Vendors Settings
         vendorboon_widget_settings_legend: Widget Settings
-        widget_interpolation_instructions: |
-          <h3>Variables usable in all fields:</h3>
-          <ul>
-            <li>&#123;&#123;member_name&#125;&#125;</li>
-            <li>&#123;&#123;member_nickname&#125;&#125;</li>
-          </ul>
