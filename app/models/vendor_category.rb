@@ -6,8 +6,10 @@ class VendorCategory < ActiveRecord::Base
   validates :name, :presence => true
 
   scope :widget_visible, lambda {
-    joins(:vendors => :vendor_proxies) & VendorProxy.widget_visible
+    joins(:vendors => :vendor_proxies).group('vendor_categories.id') & VendorProxy.widget_visible
   }
+
+  scope :ordered, lambda { order(:position) }
 
   # On updates, all members are touched, ensuring that widget JSON requests 
   # for the associations are pulling the most recent information
