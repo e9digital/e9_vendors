@@ -23,7 +23,10 @@ class E9Vendors::VendorMembersController < Admin::ResourceController
   end
 
   def update
-    update! { collection_path }
+    update! do |success, failure| 
+      success.html { redirect_to collection_path }
+      failure.html { render :edit }
+    end
   end
 
   def destroy
