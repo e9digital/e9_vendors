@@ -23,7 +23,7 @@ module E9Vendors
       end
 
       def copy_files
-        copy_file 'javascript.js',    'public/javascripts/e9_vendors.js'
+        directory 'javascripts',      'app/javascripts'
         directory 'stylesheets',      'app/stylesheets'
       end
     end
