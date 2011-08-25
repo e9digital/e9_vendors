@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   admin_path= "admin/#{base_path}"
 
   scope :path => admin_path, :module => :e9_vendors do
+    get :root, :to => redirect("/#{admin_path}/vendors")
+
     resource :settings, :only => [:show, :update], :as => :e9_vendors_settings
 
     resources :vendor_categories, :path => :categories do
@@ -34,5 +36,5 @@ Rails.application.routes.draw do
     end
   end
 
-  get "/#{base_path}/members/:id", :as => :vendor_member, :to => 'e9_vendors/vendor_members#show'
+  get "/#{base_path}/members/:id", :as => :public_vendor_member, :to => 'e9_vendors/vendor_members#show'
 end
