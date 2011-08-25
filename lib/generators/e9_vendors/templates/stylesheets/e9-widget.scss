@@ -1,6 +1,6 @@
 @import "compass/utilities/general/clearfix";
 
-#vb-widget {
+#e9-widget {
   $input_width:                           300px;
   $textarea_width:                        390px;
   $textarea_height:                       250px;
@@ -19,15 +19,15 @@
   label {
     display: block; 
   }
-  fieldset, .vb-field {
+  fieldset, .e9-field {
     margin: 0 0 1em 0; 
   }
   fieldset {
     padding: 0.5em 0.75em 0.75em;
-    .vb-field {
+    .e9-field {
       margin: 0 0 0.25em 0; 
     }
-    &.vb-checkbox {
+    &.e9-checkbox {
       input[type=checkbox] {
         margin-right: 0.3em; 
       }
@@ -58,38 +58,38 @@
   select {
     margin: 0.5em 0; 
   }
-  .vb-heading, .vb-subheading {
+  .e9-heading, .e9-subheading {
     margin: 0.25em 0; 
   }
-  .vb-vendor-category {
+  .e9-vendor-category {
     margin: 0 0 0.5em;
     padding: 0.5em 0 0; 
   }
-  .vb-vendor-category-name {
+  .e9-vendor-category-name {
     font-size: 1.1em;
     margin: 0 0 0.25em 0; 
   }
-  .vb-actions {
+  .e9-actions {
     margin: 1em 0; 
   }
-  .vb-vendor {
+  .e9-vendor {
     @include clearfix;
     margin-bottom: 1em;
-    .vb-vendor-content {
+    .e9-vendor-content {
       float: none;
-      .vb-vendor-name {
+      .e9-vendor-name {
         font-size: 1.25em; 
       } 
     }
-    .vb-vendor-logo {
+    .e9-vendor-logo {
       float: left;
       margin-right: 0.5em; 
     } 
   }
-  .vb-show-desc-link {
+  .e9-show-desc-link {
     white-space: nowrap; 
   }
-  .vb-text {
+  .e9-text {
     padding: 0.25em 0; 
   }
   input {
@@ -119,24 +119,24 @@
     }
   }
 
-  .vb-feedback.vb-feedback-error,
-  .vb-field-error input[type=email],
-  .vb-field-error input[type=text],
-  .vb-field-error input[type=password] {
+  .e9-feedback.e9-feedback-error,
+  .e9-field-error input[type=email],
+  .e9-field-error input[type=text],
+  .e9-field-error input[type=password] {
     background-color: $feedback_error_background_color;
     border-color: $feedback_error_border_color; 
   }
-  .vb-feedback.vb-feedback-error, .vb-field-error {
+  .e9-feedback.e9-feedback-error, .e9-field-error {
     color: $feedback_error_color;
     a {
       color: $feedback_error_color; 
     } 
   }
-  .vb-feedback {
+  .e9-feedback {
     padding: 0.5em 0.75em;
     margin-bottom: 1em;
     border: 1px solid $fieldset_border_color;
-    &.vb-feedback-success {
+    &.e9-feedback-success {
       background-color: $feedback_success_background_color;
       border-color: $feedback_success_border_color;
       color: $feedback_success_color;
@@ -144,7 +144,7 @@
         color: $feedback_success_color; 
       } 
     }
-    .vb-feedback-error-field {
+    .e9-feedback-error-field {
       margin: 0.25em 0; 
     } 
   } 
