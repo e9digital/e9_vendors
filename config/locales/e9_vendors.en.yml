@@ -41,6 +41,8 @@ en:
             <li>&#123;&#123;member_name&#125;&#125;</li>
             <li>&#123;&#123;member_nickname&#125;&#125;</li>
           </ul>
+      vendor_proxy:
+        discount_code: Tracking Code
   e9:
     e9_vendors:
       vendor_members:

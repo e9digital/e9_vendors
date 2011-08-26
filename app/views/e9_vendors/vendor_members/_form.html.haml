@@ -3,47 +3,47 @@
   .field
     = f.label :name, nil, :class => :req
     = f.text_field :name
-  .field
-    = upload_mount_field(resource.logo, :reset_path => true, :required => true)
-  .field
-    = f.label :nickname
-    = f.text_field :nickname
-  .field
-    = f.label :address_1
-    = f.text_field :address_1
-  .field
-    = f.label :address_2
-    = f.text_field :address_2
-  .field
-    = f.label :city
-    = f.text_field :city
-  .field
-    = f.label :state
-    = f.state_select :state
-  .field
-    = f.label :zipcode
-    = f.text_field :zipcode
-  .field
-    = f.label :country
-    = f.select :country, [["United States", "US"]]
-  .field
-    = f.label :website
-    = f.text_area :website
-  .field
-    = f.label :contact_email, nil, :class => :req
-    = f.text_field :contact_email
-  .field
-    = f.label :contact_full_name
-    = f.text_field :contact_full_name
-  .field
-    = f.label :contact_title
-    = f.text_field :contact_title
-  .field
-    = f.label :contact_phone
-    = f.text_field :contact_phone
-  .field
-    = f.label :admin_notes
-    = f.text_area :admin_notes
+  -#.field
+    -#= upload_mount_field(resource.logo, :reset_path => true, :required => true)
+  -#.field
+    -#= f.label :nickname
+    -#= f.text_field :nickname
+  -#.field
+    -#= f.label :address_1
+    -#= f.text_field :address_1
+  -#.field
+    -#= f.label :address_2
+    -#= f.text_field :address_2
+  -#.field
+    -#= f.label :city
+    -#= f.text_field :city
+  -#.field
+    -#= f.label :state
+    -#= f.state_select :state
+  -#.field
+    -#= f.label :zipcode
+    -#= f.text_field :zipcode
+  -#.field
+    -#= f.label :country
+    -#= f.select :country, [["United States", "US"]]
+  -#.field
+    -#= f.label :website
+    -#= f.text_area :website
+  -#.field
+    -#= f.label :contact_email, nil, :class => :req
+    -#= f.text_field :contact_email
+  -#.field
+    -#= f.label :contact_full_name
+    -#= f.text_field :contact_full_name
+  -#.field
+    -#= f.label :contact_title
+    -#= f.text_field :contact_title
+  -#.field
+    -#= f.label :contact_phone
+    -#= f.text_field :contact_phone
+  -#.field
+    -#= f.label :admin_notes
+    -#= f.text_area :admin_notes
 
   .actions
     = f.submit

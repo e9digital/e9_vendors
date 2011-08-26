@@ -3,6 +3,9 @@
   .field
     = f.label :name, nil, :class => :req
     = f.text_field :name
+  .field
+    = f.label :nickname
+    = f.text_field :nickname
   %fieldset.checkbox
     %legend
       = f.label :vendor_category_id, resource_class.human_attribute_name(:vendor_category), :class => :req
@@ -13,48 +16,9 @@
           = label_tag "vendor_category_#{vc.id}", vc.name
   .field
     = upload_mount_field(resource.logo, :reset_path => true, :required => true)
-  .field
-    = f.label :nickname
-    = f.text_field :nickname
-  .field
-    = f.label :address_1
-    = f.text_field :address_1
-  .field
-    = f.label :address_2
-    = f.text_field :address_2
-  .field
-    = f.label :city
-    = f.text_field :city
-  .field
-    = f.label :state
-    = f.state_select :state
-  .field
-    = f.label :zipcode
-    = f.text_field :zipcode
-  .field
-    = f.label :country
-    = f.select :country, [["United States", "US"]]
-  .field
-    = f.label :website
-    = f.text_area :website
-  .field
-    = f.label :contact_email, nil, :class => :req
-    = f.text_field :contact_email
-  .field
-    = f.label :contact_full_name
-    = f.text_field :contact_full_name
-  .field
-    = f.label :contact_title
-    = f.text_field :contact_title
-  .field
-    = f.label :contact_phone
-    = f.text_field :contact_phone
 
   %fieldset
     %legend= e9_t(:widget_settings_legend)
-    .field.checkbox
-      = f.label :display_on_widget_contact_form
-      = f.check_box :display_on_widget_contact_form
     .field
       = f.label :sales_email, nil, :class => :req
       = f.text_field :sales_email
@@ -74,18 +38,8 @@
       = help_label(f, :long_description, :key => :interpolation_instructions, :header => 'Variable Help')
       = f.text_area :long_description
     .field
-      = f.label :discount_percentage, nil, :class => :req
-      #{f.text_field :discount_percentage}%
-    .field
-      = f.label :member_compensation, nil, :class => :req
-      #{f.text_field :member_compensation}%
-    .field
       = f.label :landing_page, nil, :class => :req
       = f.text_area :landing_page
-
-  .field
-    = f.label :admin_notes
-    = f.text_area :admin_notes
 
   .actions
     = f.submit

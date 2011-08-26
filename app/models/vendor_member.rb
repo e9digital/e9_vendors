@@ -17,5 +17,4 @@ class VendorMember < ActiveRecord::Base
   mount_uploader :logo, LogoUploader
 
   validates :name, :presence => true
-  validates :logo, :presence => true
 end

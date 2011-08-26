@@ -5,9 +5,9 @@
     = f.text_field :discount_code
   .instructions
     = e9_t(:vendor_defaults_instructions)
-  .field
-    = f.label :discount_percentage, resource.label_with_default(:discount_percentage)
-    = f.text_field :discount_percentage, :value => resource.send(:read_attribute, :discount_percentage)
+  -#.field
+    -#= f.label :discount_percentage, resource.label_with_default(:discount_percentage)
+    -#= f.text_field :discount_percentage, :value => resource.send(:read_attribute, :discount_percentage)
   .field
     = f.label :landing_page, resource.label_with_default(:landing_page)
     = f.text_area :landing_page, :value => (resource.send(:read_attribute, :landing_page) || '')
