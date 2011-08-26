@@ -4,10 +4,8 @@ class VendorProxy < ActiveRecord::Base
   belongs_to :vendor, :touch => true
   belongs_to :vendor_member, :touch => true
 
-  before_validation :populate_default_discount_code, :on => :create
+  before_validation :populate_default_discount_code
 
-  validates :discount_code,       :presence => true,                                 :on => :update
-  validates :discount_percentage, :numericality => { :greater_than_or_equal_to => 0, :less_than => 100 }
   validates :sales_email,         :email => { :allow_blank => true }
 
   delegate :name, :to => :vendor, :prefix => true
@@ -30,7 +28,7 @@ class VendorProxy < ActiveRecord::Base
   protected
 
   def populate_default_discount_code
-    self.discount_code = "V-#{self.vendor.id}-#{self.vendor_member.id}"
+    self.discount_code = self.discount_code.presence || "V-#{self.vendor.id}-#{self.vendor_member.id}"
   end
 
   def vendor_fallback(column)
