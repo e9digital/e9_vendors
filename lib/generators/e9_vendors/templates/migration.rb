@@ -32,7 +32,7 @@ class CreateE9Vendors < ActiveRecord::Migration
 
     create_table :vendor_proxies, :force => true do |t|
       t.references :vendor, :vendor_member
-      t.boolean  "display_on_widget",                                  :default => true
+      t.boolean  "display_on_widget", :default => true
       t.string   "discount_code"
       t.string   "sales_full_name"
       t.string   "sales_title"
@@ -60,14 +60,14 @@ class CreateE9Vendors < ActiveRecord::Migration
       t.string   "state"
       t.text     "website"
       t.text     "admin_notes"
-      t.boolean  "display_on_widget_contact_form",                                :default => true
+      t.boolean  "display_on_widget_contact_form", :default => true
       t.string   "sales_email"
       t.string   "sales_full_name"
       t.string   "sales_title"
       t.string   "sales_phone"
       t.text     "short_description"
       t.text     "long_description"
-      t.text     "default_landing_page"
+      t.text     "landing_page"
       t.decimal  "discount_percentage",     :precision => 10, :scale => 2
       t.decimal  "member_compensation", :precision => 10, :scale => 2
       t.string   "logo"
@@ -76,9 +76,20 @@ class CreateE9Vendors < ActiveRecord::Migration
 
     add_column :settings, :e9_vendors_widget_title,      :string
     add_column :settings, :e9_vendors_widget_form_title, :string
+    add_column :settings, :e9_vendors_logo_size,         :integer
     add_column :settings, :e9_vendors_widget_form_text,  :text
   end
 
   def self.down
+    remove_column :settings, :e9_vendors_widget_form_text
+    remove_column :settings, :e9_vendors_logo_size
+    remove_column :settings, :e9_vendors_widget_form_title
+    remove_column :settings, :e9_vendors_widget_title
+
+    drop_table :vendors
+    drop_table :vendor_proxies
+    drop_table :vendor_categories_vendors
+    drop_table :vendor_categories
+    drop_table :vendor_members
   end
 end
