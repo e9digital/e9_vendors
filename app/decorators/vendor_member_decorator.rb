@@ -32,7 +32,8 @@ class VendorMemberDecorator < VendorsDecorator
 <script type="text/javascript">
   try {
     new E9.VendorWidget({
-      code: "#{model.md5_hash}"
+      code: "#{model.md5_hash}",
+       url: "#{base_url}"
     }).render();
   } catch (e) {}
 </script>
@@ -43,7 +44,11 @@ class VendorMemberDecorator < VendorsDecorator
 
   def script_url
     dir = Rails.env.development? && 'javascripts' || 'assets'
-    Linkable.urlify_path("/#{dir}/vendor-widget.js")
+    "#{base_url}/#{dir}/vendor-widget.js"
+  end
+
+  def base_url
+    h.request.protocol + h.request.host_with_port
   end
 
   def liquid_context
