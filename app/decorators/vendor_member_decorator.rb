@@ -14,14 +14,13 @@ class VendorMemberDecorator < VendorsDecorator
       :contact_phone => model.contact_phone,
       :contact_title => model.contact_title,
       :country => model.country,
-      :logo => model.logo_url,
       :nickname => model.nickname,
       :state => model.state,
       :vendors => VendorProxyDecorator.decorate(model.vendor_proxies.widget_visible),
       :website => model.website,
-      :widget_form_text => config_render(:e9_vendors_widget_form_text),
-      :widget_form_title => config_render(:e9_vendors_widget_form_title),
-      :widget_title => config_render(:e9_vendors_widget_title),
+      :widget_form_text => h.kramdown(config_render(:e9_vendors_widget_form_text)),
+      :widget_form_title => h.kramdown(config_render(:e9_vendors_widget_form_title)),
+      :widget_title => h.kramdown(config_render(:e9_vendors_widget_title)),
       :zipcode => model.zipcode
     }
   end

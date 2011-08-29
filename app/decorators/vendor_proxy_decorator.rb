@@ -21,7 +21,7 @@ class VendorProxyDecorator < VendorsDecorator
       :display_on_widget_contact_form => vendor.display_on_widget_contact_form,
       :landing_page => self.landing_page,
       :logo => vendor.logo_url,
-      :long_description => liquid_render(vendor.long_description),
+      :long_description => h.kramdown(liquid_render(vendor.long_description)),
       :member_compensation => vendor.member_compensation,
       :name => vendor.name,
       :nickname => vendor.nickname,
@@ -30,7 +30,7 @@ class VendorProxyDecorator < VendorsDecorator
       :sales_full_name => self.sales_full_name,
       :sales_phone => self.sales_phone,
       :sales_title => self.sales_title,
-      :short_description => liquid_render(vendor.short_description),
+      :short_description => h.kramdown(liquid_render(vendor.short_description)),
       :state => vendor.state,
       :website => vendor.website,
       :zipcode => vendor.zipcode
@@ -58,7 +58,7 @@ class VendorProxyDecorator < VendorsDecorator
 
   def liquid_context
     super.merge({
-      'vendor_discount_code'       => model.discount_code,
+      'vendor_tracking_code'       => model.discount_code,
       'vendor_sales_full_name'     => model.sales_full_name,
       'vendor_sales_title'         => model.sales_title,
       'vendor_sales_phone'         => model.sales_phone,

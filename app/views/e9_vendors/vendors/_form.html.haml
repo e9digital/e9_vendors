@@ -32,10 +32,10 @@
       = f.label :sales_phone
       = f.text_field :sales_phone
     .field
-      = help_label(f, :short_description, :key => :interpolation_instructions, :header => 'Variable Help')
+      = help_label(f, :short_description, :key => :interpolation_instructions)
       = f.text_area :short_description
     .field
-      = help_label(f, :long_description, :key => :interpolation_instructions, :header => 'Variable Help')
+      = help_label(f, :long_description, :key => :interpolation_instructions)
       = f.text_area :long_description
     .field
       = f.label :landing_page, nil, :class => :req
