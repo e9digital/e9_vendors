@@ -19,7 +19,7 @@ en:
           &#123;&#123;member_name&#125;&#125;<br/>
           &#123;&#123;vendor_tracking_code&#125;&#125;<br/>
           &#123;&#123;vendor_name&#125;&#125;<br/>
-          &#123;&#123;vendor_nickname&#125;&#125;<br/>
+          &#123;&#123;vendor_company&#125;&#125;<br/>
           &#123;&#123;vendor_landing_page&#125;&#125;<br/>
           &#123;&#123;vendor_sales_email&#125;&#125;<br/>
           &#123;&#123;vendor_sales_full_name&#125;&#125;<br/>

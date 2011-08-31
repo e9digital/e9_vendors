@@ -66,7 +66,7 @@ class VendorProxyDecorator < VendorsDecorator
       'vendor_landing_page'        => model.landing_page,
       'vendor_discount_percentage' => model.discount_percentage,
       'vendor_name'                => vendor.name,
-      'vendor_nickname'            => vendor.nickname,
+      'vendor_company'             => vendor.nickname,
       'member_name'                => vendor_member.name,
       'member_nickname'            => vendor_member.nickname
     })
