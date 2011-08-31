@@ -11,6 +11,7 @@ en:
       vendor:
         vendor_category: Category
         discount_percentage: Default Member Discount
+        nickname: Company
         interpolation_instructions: |
           <h3>Variables:</h3>
           <p>You can insert the following to render variable data in the field</p>
