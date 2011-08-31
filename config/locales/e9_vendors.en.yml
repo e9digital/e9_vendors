@@ -1,5 +1,12 @@
 en:
   activerecord:
+    errors:
+      models:
+        vendor:
+          attributes:
+            vendor_categories:
+              blank: "You must select at least one category."
+
     # Translate model names. Used in Model.human_name().
     models:
       vendor_proxy: Vendor

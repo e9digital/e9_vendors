@@ -11,6 +11,7 @@ class Vendor < ActiveRecord::Base
   validates :short_description,        :presence => true
   validates :long_description,         :presence => true
   validates :landing_page,             :presence => true
+  validates :vendor_categories,        :presence => true
 
   mount_uploader :logo, LogoUploader
 

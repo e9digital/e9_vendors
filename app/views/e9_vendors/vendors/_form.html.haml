@@ -9,11 +9,16 @@
   %fieldset.checkbox
     %legend
       = f.label :vendor_category_id, resource_class.human_attribute_name(:vendor_category), :class => :req
-    %ul
-      - VendorCategory.order(:name).each do |vc|
-        %li.checkbox
-          = check_box_tag 'vendor[vendor_category_ids][]', vc.id, resource.vendor_category_ids.member?(vc.id), :id => "vendor_category_#{vc.id}"
-          = label_tag "vendor_category_#{vc.id}", vc.name
+    - unless VendorCategory.count.zero?
+      %ul
+        - VendorCategory.order(:name).each do |vc|
+          %li.checkbox
+            = check_box_tag 'vendor[vendor_category_ids][]', vc.id, resource.vendor_category_ids.member?(vc.id), :id => "vendor_category_#{vc.id}"
+            = label_tag "vendor_category_#{vc.id}", vc.name
+    - else
+      No categories exist yet.
+      = link_to("Create one?", new_vendor_category_path)
+
   .field
     = upload_mount_field(resource.logo, :reset_path => true, :required => true)
 
